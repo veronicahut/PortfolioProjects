@@ -111,6 +111,20 @@ p {
     filter: brightness(1.05); 
 }
 
+/* contact section link highlights */
+#contactsect a {
+    transition: color 0.8s ease,
+                background-color 0.8s ease,
+                box-shadow 0.8s ease,
+                border 0.8s ease;
+}
+
+#contactsect a.active-link {
+    color: #c3ecee;
+    background-color: #19a2a7;
+    box-shadow: 0 0 12px rgba(25, 162, 167, 0.6);
+}
+
 /* --- Sections Layout --- */
 #maincontent {
     padding: 20px;

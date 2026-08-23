@@ -1,7 +1,8 @@
 // title: brightnessAnimation.js
 // author: ChatGPT, Veronica Hutchins
 // date: 05/7/2026
-// note: brightens contact links one at a time every 5 seconds
+// note: Brightens contact links one at a time every 5 seconds
+//       and pauses the animation when the user hovers over a link.
 
 const links = [
     document.querySelector("#email a"),
@@ -10,6 +11,8 @@ const links = [
 ];
 
 let currentIndex = 0;
+let animationTimer;
+
 
 // normal and bright colors
 // const normalColor = "#19a2a7";
@@ -36,17 +39,43 @@ let currentIndex = 0;
 //     }
 // }
 
+// function highlightNextLink() {
+
+//     // remove highlight class from all
+//     links.forEach(link => {
+//         link.classList.remove("active-link");
+//     });
+
+//     // add highlight class to current link
+//     links[currentIndex].classList.add("active-link");
+
+//     // move to next link
+//     currentIndex++;
+
+//     if (currentIndex >= links.length) {
+//         currentIndex = 0;
+//     }
+// }
+
+// // start immediately
+// highlightNextLink();
+
+// // repeat every 5 seconds
+// setInterval(highlightNextLink, 5000);
+
+
+// Highlight the next link
 function highlightNextLink() {
 
-    // remove highlight class from all
+    // Remove highlight from all links
     links.forEach(link => {
         link.classList.remove("active-link");
     });
 
-    // add highlight class to current link
+    // Highlight current link
     links[currentIndex].classList.add("active-link");
 
-    // move to next link
+    // Move to the next link
     currentIndex++;
 
     if (currentIndex >= links.length) {
@@ -54,8 +83,29 @@ function highlightNextLink() {
     }
 }
 
-// start immediately
-highlightNextLink();
+// Start the animation
+function startAnimation() {
+    animationTimer = setInterval(highlightNextLink, 5000);
+}
 
-// repeat every 5 seconds
-setInterval(highlightNextLink, 5000);
+// Stop the animation
+function stopAnimation() {
+    clearInterval(animationTimer);
+}
+
+// Start immediately
+highlightNextLink();
+startAnimation();
+
+// Pause when the mouse enters any contact link
+links.forEach(link => {
+
+    link.addEventListener("mouseenter", () => {
+        stopAnimation();
+    });
+
+    link.addEventListener("mouseleave", () => {
+        startAnimation();
+    });
+
+});
