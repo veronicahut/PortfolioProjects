@@ -13,57 +13,6 @@ const links = [
 let currentIndex = 0;
 let animationTimer;
 
-
-// normal and bright colors
-// const normalColor = "#19a2a7";
-// const brightColor = "#77fce6";
-
-// smooth transition effect
-// links.forEach(link => {
-//     link.style.transition = "color 1.5s ease";
-//     link.style.color = normalColor;
-// });
-
-// function highlightNextLink0() {
-
-//     links.forEach(link => {
-//         link.style.color = normalColor;
-//     });
-
-//     links[currentIndex].style.color = brightColor;
-
-//     currentIndex++;
-
-//     if (currentIndex >= links.length) {
-//         currentIndex = 0;
-//     }
-// }
-
-// function highlightNextLink() {
-
-//     // remove highlight class from all
-//     links.forEach(link => {
-//         link.classList.remove("active-link");
-//     });
-
-//     // add highlight class to current link
-//     links[currentIndex].classList.add("active-link");
-
-//     // move to next link
-//     currentIndex++;
-
-//     if (currentIndex >= links.length) {
-//         currentIndex = 0;
-//     }
-// }
-
-// // start immediately
-// highlightNextLink();
-
-// // repeat every 5 seconds
-// setInterval(highlightNextLink, 5000);
-
-
 // Highlight the next link
 function highlightNextLink() {
 
@@ -85,7 +34,7 @@ function highlightNextLink() {
 
 // Start the animation
 function startAnimation() {
-    animationTimer = setInterval(highlightNextLink, 5000);
+    animationTimer = setInterval(highlightNextLink, 4000);
 }
 
 // Stop the animation
