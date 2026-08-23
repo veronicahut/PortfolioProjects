@@ -34,7 +34,7 @@ function highlightNextLink() {
 
 // Start the animation
 function startAnimation() {
-    animationTimer = setInterval(highlightNextLink, 4000);
+    animationTimer = setInterval(highlightNextLink, 3500);
 }
 
 // Stop the animation
