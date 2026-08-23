@@ -37,8 +37,8 @@ function startAnimation() {
     animationTimer = setInterval(highlightNextLink, 3500);
 }
 
-// Stop the animation
-function stopAnimation() {
+// Pause the animation
+function pauseAnimation() {
     clearInterval(animationTimer);
 }
 
@@ -47,13 +47,42 @@ highlightNextLink();
 startAnimation();
 
 // Pause when the mouse enters any contact link
+// links.forEach(link => {
+
+//     link.addEventListener("mouseenter", () => {
+//         pauseAnimation();
+//     });
+
+//     link.addEventListener("mouseleave", () => {
+//         startAnimation();
+//     });
+
+// });
+
+// Handle mouse hovering
 links.forEach(link => {
 
     link.addEventListener("mouseenter", () => {
-        stopAnimation();
+
+        // Pause automatic animation
+        pauseAnimation();
+
+        // Remove highlight from every link
+        links.forEach(otherLink => {
+            otherLink.classList.remove("active-link");
+        });
+
+        // Highlight ONLY the link being hovered
+        link.classList.add("active-link");
     });
 
+
     link.addEventListener("mouseleave", () => {
+
+        // Remove the hover highlight
+        link.classList.remove("active-link");
+
+        // Start automatic animation again
         startAnimation();
     });
 
