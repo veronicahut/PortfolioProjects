@@ -11,7 +11,7 @@ Welcome! This is my personal portfolio website, showcasing samples of my work, r
 - [Contact](contact.html)
 
 You can also view the website here:  
-https://veronicahut.github.io/HTML_CSS_Project/index.html
+https://veronicahut.github.io/PortfolioProjects/index.html
 
 ---
 © Veronica Hutchins
