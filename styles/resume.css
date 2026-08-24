@@ -52,15 +52,6 @@ p {
     padding-bottom: 1.5em;
 }
 
-/* Ensure list items and italicized elements inside job lists are normal weight */
-.job-entry ul li,
-.job-entry ul li i,
-.job-entry ul li em,
-main ul li {
-    font-weight: normal;
-    font-style: normal; 
-}
-
 /* Skills Container - Centered */
 .skills {
     font-family: verdana, sans-serif;
@@ -111,6 +102,15 @@ img {
     text-align: center;
     font-style: italic;
     color: #555;
+}
+
+/* Ensure list items and italicized elements inside job lists are normal weight */
+.job-entry ul li,
+.job-entry ul li i,
+.job-entry ul li em,
+main ul li {
+    font-weight: normal;
+    font-style: normal; 
 }
 
 /* Navigation Styles */
